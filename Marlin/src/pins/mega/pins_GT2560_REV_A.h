@@ -38,27 +38,32 @@
 //
 // Limit Switches
 //
-#define X_MIN_PIN                             22
-#define X_MAX_PIN                             24
-#define Y_MIN_PIN                             26
-#define Y_MAX_PIN                             28
-#define Z_MIN_PIN                             30
+#define X_MIN_PIN          -1 //22
+#define X_MAX_PIN          -1 //24
+#define Y_MIN_PIN          -1 //26
+#define Y_MAX_PIN          -1 //28
+#define Z_MIN_PIN          30
+#define Z_MAX_PIN          -1 //32
 
-#if ENABLED(BLTOUCH)
-  #if MB(GT2560_REV_A_PLUS)
-    #define SERVO0_PIN                        11
-    #define Z_MAX_PIN                         32
-  #else
-    #define SERVO0_PIN                        32
-    #define Z_MAX_PIN                         -1
-  #endif
-#else
-  #define Z_MAX_PIN                           32
-#endif
+#define SERVO0_PIN         32 //BL_Touch (prev. Z_MAX_PIN)
+#define FIL_RUNOUT_PIN     28 //(prev. Y_MAX_PIN)
 
 //
 // Steppers
 //
+/*
+---------------
+| EN°o°| VM   |
+| SDI  | GND  |
+| SCK  | OB2  |
+| CSN  | OB1  |
+| SD0  | OA1  |
+|      | OA2  |
+| STEP | VIO  |
+| DIR  | GND  |
+---------------
+*/
+
 #define X_STEP_PIN                            25
 #define X_DIR_PIN                             23
 #define X_ENABLE_PIN                          27
@@ -104,6 +109,13 @@
 #define PS_ON_PIN                             12
 #define SUICIDE_PIN                           54  // Must be enabled at startup to keep power flowing
 #define KILL_PIN                              -1
+
+// TMC2130 Setup
+
+#define X_CS_PIN  22 // prev. X_MIN_PIN
+#define Y_CS_PIN  24 // prev. X_MAX_PIN
+#define Z_CS_PIN  26 // prev. Y_MIN_PIN
+// #define E0_CS_PIN -1
 
 #if HAS_WIRED_LCD
 
