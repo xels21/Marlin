@@ -95,7 +95,7 @@
 // Heaters / Fans
 //
 #define HEATER_0_PIN                           2
-#define HEATER_1_PIN                           3
+#define HEATER_1_PIN                           -1 //3
 #define HEATER_BED_PIN                         4
 #ifndef FAN_PIN
   #define FAN_PIN                              7
@@ -115,7 +115,7 @@
 #define X_CS_PIN  22 // prev. X_MIN_PIN
 #define Y_CS_PIN  24 // prev. X_MAX_PIN
 #define Z_CS_PIN  26 // prev. Y_MIN_PIN
-// #define E0_CS_PIN -1
+#define E0_CS_PIN  3 // prev. HEATER_1_PIN
 
 #if HAS_WIRED_LCD
 
