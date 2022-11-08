@@ -1221,7 +1221,7 @@
  */
 #define NOZZLE_TO_PROBE_OFFSET_X -25
 #define NOZZLE_TO_PROBE_OFFSET_Y -39
-#define NOZZLE_TO_PROBE_OFFSET_Z -0.9 // The greater the upper (e.g. if -2 is too close, increase the value (e.g. -1))
+#define NOZZLE_TO_PROBE_OFFSET_Z -1.2 // The greater the upper (e.g. if -2 is too close, increase the value (e.g. -1))
 #define NOZZLE_TO_PROBE_OFFSET { NOZZLE_TO_PROBE_OFFSET_X, NOZZLE_TO_PROBE_OFFSET_Y, NOZZLE_TO_PROBE_OFFSET_Z } //{ -25, -41, -2.5 }
 
 // Most probes should stay away from the edges of the bed, but
