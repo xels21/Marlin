@@ -2438,7 +2438,12 @@
 // If you have a speaker that can produce tones, enable it here.
 // By default Marlin assumes you have a buzzer with a fixed frequency.
 //
-#define SPEAKER
+// NOTE: Disabled due to error:
+//   FAN_PIN 9 Hardware PWM uses Timer 2 which conflicts with Arduino AVR Tone Timer (for SPEAKER).
+//   "Disable SPEAKER or enable FAN_SOFT_PWM."
+// https://github.com/MarlinFirmware/Marlin/issues/23651#issuecomment-1026262567
+// > just run it without tones, you still get beeps on the buzzer, just not so elegant as tones ..
+// #define SPEAKER
 
 //
 // The duration and frequency for the UI feedback sound.
@@ -2469,7 +2474,7 @@
 // Requires Testato, Koepel softwarewire library and
 // Andriy Golovnya's LiquidCrystal_AIP31068 library.
 //
-//#define YHCB2004
+#define YHCB2004
 
 //
 // Original RADDS LCD Display+Encoder+SDCardReader
