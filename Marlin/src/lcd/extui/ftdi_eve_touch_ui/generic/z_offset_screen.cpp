@@ -84,7 +84,14 @@ void ZOffsetScreen::runWizard() {
   strcat(cmd, str);
   injectCommands(cmd);
   // Show instructions for user.
-  AlertDialogBox::show(PSTR("After the printer finishes homing, adjust the Z Offset so that a sheet of paper can pass between the nozzle and bed with slight resistance."));
+  AlertDialogBox::show(F("After the printer finishes homing, adjust the Z Offset so that a sheet of paper can pass between the nozzle and bed with slight resistance."));
+}
+
+bool ZOffsetScreen::wizardRunning() {
+  // We can't store state after the call to the AlertBox, so
+  // check whether the current Z position equals mydata.z in order
+  // to know whether the user started the wizard.
+  return getAxisPosition_mm(Z) == mydata.z;
 }
 
 bool ZOffsetScreen::wizardRunning() {

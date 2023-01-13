@@ -195,4 +195,40 @@ void setup_endstop_interrupts() {
     #endif
     attachInterrupt(K_MIN_PIN, endstop_ISR, CHANGE);
   #endif
+  #if HAS_I_MAX
+    #if !AVAILABLE_EILINE(I_MAX_PIN)
+      #error "I_MAX_PIN has no EXTINT line available."
+    #endif
+    attachInterrupt(I_MAX_PIN, endstop_ISR, CHANGE);
+  #endif
+  #if HAS_I_MIN
+    #if !AVAILABLE_EILINE(I_MIN_PIN)
+      #error "I_MIN_PIN has no EXTINT line available."
+    #endif
+    attachInterrupt(I_MIN_PIN, endstop_ISR, CHANGE);
+  #endif
+  #if HAS_J_MAX
+    #if !AVAILABLE_EILINE(J_MAX_PIN)
+      #error "J_MAX_PIN has no EXTINT line available."
+    #endif
+    attachInterrupt(J_MAX_PIN, endstop_ISR, CHANGE);
+  #endif
+  #if HAS_J_MIN
+    #if !AVAILABLE_EILINE(J_MIN_PIN)
+      #error "J_MIN_PIN has no EXTINT line available."
+    #endif
+    attachInterrupt(J_MIN_PIN, endstop_ISR, CHANGE);
+  #endif
+  #if HAS_K_MAX
+    #if !AVAILABLE_EILINE(K_MAX_PIN)
+      #error "K_MAX_PIN has no EXTINT line available."
+    #endif
+    attachInterrupt(K_MAX_PIN, endstop_ISR, CHANGE);
+  #endif
+  #if HAS_K_MIN
+    #if !AVAILABLE_EILINE(K_MIN_PIN)
+      #error "K_MIN_PIN has no EXTINT line available."
+    #endif
+    attachInterrupt(K_MIN_PIN, endstop_ISR, CHANGE);
+  #endif
 }
